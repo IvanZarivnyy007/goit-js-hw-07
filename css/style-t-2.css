@@ -1,4 +1,11 @@
-.gallery {
+ul {
+    list-style-type: none; 
+    }
 
-    
+.gallery {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
 }
