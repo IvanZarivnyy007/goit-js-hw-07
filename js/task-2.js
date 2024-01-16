@@ -29,21 +29,12 @@ const images = [
 ];
 
 
-const galeryImages = document.querySelector('ul');
+const galleryImages = document.querySelector('.gallery');
+
+let newImages = images.map(image => {
+  return `<li><img style="border-radius: 10px; box-shadow: 9px 9px yellow, -1em 0 .4em blue; width: 500px; height: 350px;" src="${image.url}" alt="${image.alt}"></li>`
+}).join('\n')
+galleryImages.innerHTML = newImages;
 
 
-
-images.forEach(image => {
-  const newImg = document.createElement('img')
-  newImg.setAttribute('src', image.url)
-  newImg.setAttribute('alt', image.alt)
-  newImg.setAttribute('width', '500');
-  newImg.setAttribute('height', '350');
-  newImg.style.borderRadius = '10px';
-  newImg.style.boxShadow = '9px 9px yellow, -1em 0 .4em blue';
-  const newLi = document.createElement('li');
-  newLi.appendChild(newImg)
-  galeryImages.appendChild(newLi);
-
-})
 

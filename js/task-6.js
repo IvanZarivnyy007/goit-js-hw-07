@@ -9,11 +9,14 @@ const input = controls?.querySelector('input')
 const dataCreate = controls?.querySelector('[data-create]')
 const dataDestroy = controls?.querySelector('[data-destroy]')
 const boxes = document.querySelector('#boxes')
+const initialSize = 30;
 
 const createBoxes = (amount) => {
-  if(+amount<= 0 || +amount >100) return 
-  let size = 30;
-  Array.from({length:amount}).forEach( () => {
+  let amountNum = parseInt(amount)
+  if(amountNum<= 0 || amountNum >100) return 
+  boxes.innerHTML = '';
+  let size = initialSize;
+  Array.from({length:amountNum}).forEach( () => {
     const div = document.createElement('div')
     div.style.backgroundColor = getRandomHexColor()
     div.style.width = `${size}px`
